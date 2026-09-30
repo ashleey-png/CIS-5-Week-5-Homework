@@ -23,7 +23,7 @@ int main()
   // TODO: else if ( ... ) { ... }          middle outcome
   // TODO: else { ... }                     the rest
 
-  if (score < 0 || score > 100)
+  if (score < 0 || score > 100 || attendance < 0 || attendance > 100)
   {
     std::cout << "Nah, you lying.";
   }
@@ -31,9 +31,16 @@ int main()
   {
     std::cout << "Ayyyee! You pass.";
   }
-  else if (score >= 70 && attendance < 75)
+  else if (score >= 70 || attendance >= 75)
   {
-    std::cout << "Watch it. Go to class.";
+    if (score >= 70)
+    {
+      std::cout << "Go to class, attendance is low.";
+    }
+    else
+    {
+      std::cout << "Warning! Course score is too low!";
+    }
   }
   else
   {
